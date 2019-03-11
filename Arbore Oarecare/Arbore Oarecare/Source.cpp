@@ -26,6 +26,7 @@ private:
 public:
 	NodArbore()
 	{
+
 	}
 	NodArbore(int value)
 	{
@@ -41,7 +42,7 @@ private:
 	NodArbore root;
 	ostream& os;
 public:
-	
+
 	friend istream& operator >> (istream& is, Arbore &arbore)
 	{
 		int n, tata, fiu;
@@ -73,7 +74,7 @@ public:
 		}
 		children->nextFrate = &arbore.root;
 		return *this;
-	} 
+	}
 
 	void InsertNode(int tata, int fiu)
 	{
@@ -149,6 +150,7 @@ public:
 
 	void BFS(int value)
 	{
+		cout << "BFS: ";
 		NodArbore* foundNode = SearchNode(value, &root);
 		if (foundNode == nullptr)
 		{
@@ -175,6 +177,7 @@ public:
 
 	void DFS(int value)
 	{
+		cout << "DFS: ";
 		NodArbore* foundNode = SearchNode(value, &root);
 		if (foundNode == nullptr)
 		{
@@ -247,7 +250,7 @@ public:
 		}
 		os << endl;
 	}
-	
+
 	Arbore(ostream& out) : os(out)
 	{
 		os.rdbuf(out.rdbuf());
@@ -262,10 +265,11 @@ public:
 int main()
 {
 	ifstream fin("../arbore.in");
-	//ostream os(cout.rdbuf());
-	ofstream os("arbore.out");
+	ostream os(cout.rdbuf());
+	//ofstream os("arbore.out");
 	//os.rdbuf();
 	Arbore arbore(os);
+	//arbore.AddChild(10, 1);
 	arbore.SetOstream(os);
 	fin >> arbore;
 	os << arbore;
@@ -276,7 +280,7 @@ int main()
 	Arbore arbore2(os);
 	fin = ifstream("../arbore.in");
 	fin >> arbore2;
-	os << arbore2 << "----------------------\n";
-	os << arbore + arbore2;
+	//os << arbore2 << "----------------------\n";
+	//os << arbore + arbore2;
 	return 0;
 }
