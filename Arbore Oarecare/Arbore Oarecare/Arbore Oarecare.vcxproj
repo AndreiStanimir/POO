@@ -146,10 +146,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ABC.cpp" />
+    <ClCompile Include="AB_oarecare.cpp" />
+    <ClCompile Include="Arbore.cpp" />
+    <ClCompile Include="Nod.cpp" />
+    <ClCompile Include="Nod_ABC.cpp" />
+    <ClCompile Include="Nod_fiu_frate.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\arbore.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ABC.h" />
+    <ClInclude Include="AB_oarecare.h" />
+    <ClInclude Include="Arbore.h" />
+    <ClInclude Include="Nod.h" />
+    <ClInclude Include="Nod_ABC.h" />
+    <ClInclude Include="Nod_fiu_frate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

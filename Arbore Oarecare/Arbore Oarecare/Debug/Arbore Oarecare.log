@@ -1,2 +1,8 @@
-﻿  Source.cpp
-c:\users\nxf51502\source\repos\poo\arbore oarecare\arbore oarecare\source.cpp(35): error C4716: 'Nod::operator=': must return a value
+﻿  ABC.cpp
+  AB_oarecare.cpp
+  Arbore.cpp
+  Source.cpp
+  Generating Code...
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\abc.cpp(65): warning C4715: 'ArboreDeCautare::SearchParent': not all control paths return a value
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\abc.cpp(49): warning C4715: 'ArboreDeCautare::SearchUtility': not all control paths return a value
+  Arbore Oarecare.vcxproj -> C:\Users\andreio\Source\Repos\POO\Arbore Oarecare\Debug\Arbore Oarecare.exe
