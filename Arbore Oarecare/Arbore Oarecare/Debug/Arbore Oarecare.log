@@ -1,8 +1,34 @@
 ﻿  ABC.cpp
   AB_oarecare.cpp
-  Arbore.cpp
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(8): error C2440: '=': cannot convert from 'Nod_fiu_frate' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(8): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(20): error C2440: 'initializing': cannot convert from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(20): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(32): error C2440: '=': cannot convert from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(32): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(38): error C2664: 'Nod_fiu_frate *AB_oarecare::SearchNode(int,Nod_fiu_frate *)': cannot convert argument 2 from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(38): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(111): error C2664: 'Nod_fiu_frate *AB_oarecare::SearchNode(int,Nod_fiu_frate *)': cannot convert argument 2 from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(111): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(138): error C2664: 'Nod_fiu_frate *AB_oarecare::SearchNode(int,Nod_fiu_frate *)': cannot convert argument 2 from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(138): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(167): error C2664: 'void std::queue<std::pair<Nod_fiu_frate *,int>,std::deque<_Ty,std::allocator<_Ty>>>::push(const std::pair<Nod_fiu_frate *,int> &)': cannot convert argument 1 from 'std::pair<Nod_fiu_frate **,int>' to 'std::pair<Nod_fiu_frate *,int> &&'
+          with
+          [
+              _Ty=std::pair<Nod_fiu_frate *,int>
+          ]
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(167): note: Reason: cannot convert from 'std::pair<Nod_fiu_frate **,int>' to 'std::pair<Nod_fiu_frate *,int>'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(167): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(192): error C2664: 'void std::queue<Nod_fiu_frate *,std::deque<_Ty,std::allocator<_Ty>>>::push(Nod_fiu_frate *const &)': cannot convert argument 1 from 'Nod_fiu_frate **' to 'Nod_fiu_frate *&&'
+          with
+          [
+              _Ty=Nod_fiu_frate *
+          ]
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(192): note: Reason: cannot convert from 'Nod_fiu_frate **' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(192): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(214): error C2440: '=': cannot convert from 'Nod_fiu_frate' to 'Nod_fiu_frate *'
+  c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\ab_oarecare.cpp(214): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   Source.cpp
   Generating Code...
-c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\abc.cpp(65): warning C4715: 'ArboreDeCautare::SearchParent': not all control paths return a value
 c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\abc.cpp(49): warning C4715: 'ArboreDeCautare::SearchUtility': not all control paths return a value
-  Arbore Oarecare.vcxproj -> C:\Users\andreio\Source\Repos\POO\Arbore Oarecare\Debug\Arbore Oarecare.exe
+c:\users\andreio\source\repos\poo\arbore oarecare\arbore oarecare\abc.cpp(65): warning C4715: 'ArboreDeCautare::SearchParent': not all control paths return a value

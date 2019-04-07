@@ -124,6 +124,42 @@ void ArboreDeCautare::DestroyTree(Nod_ABC* nod)
 	}
 }
 
+void ArboreDeCautare::Afisare()
+{
+	cout << "RSD:\n";
+	RSD(root);
+	cout << "SRD:\n";
+	SRD(root);
+	cout << "SDR:\n";
+	SDR(root);
+}
+
+void ArboreDeCautare::RSD(Nod_ABC* root)
+{
+	if (root == NULL)
+		return;
+	cout << root->value << " ";
+	RSD(root->stanga);
+	RSD(root->dreapta);
+}
+void ArboreDeCautare::SRD(Nod_ABC* root)
+{
+	if (root == NULL)
+		return;
+	SRD(root->stanga);
+	cout << root->value << " ";
+	SRD(root->dreapta);
+}
+void ArboreDeCautare::SDR(Nod_ABC* root)
+{
+	if (root == NULL)
+		return;
+	SDR(root->stanga);
+	SDR(root->dreapta);
+	cout << root->value << " ";
+}
+
+
 ArboreDeCautare::~ArboreDeCautare()
 {
 	DestroyTree(root);

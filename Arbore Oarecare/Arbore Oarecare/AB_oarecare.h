@@ -29,4 +29,5 @@ public:
 	void PrintLeafs();
 	AB_oarecare(ostream& out);
 	void SetOstream(ostream& out);
+	void Afisare();
 };

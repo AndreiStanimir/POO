@@ -217,3 +217,8 @@ void AB_oarecare::SetOstream(ostream& out)
 {
 	os.rdbuf(out.rdbuf());
 }
+
+void AB_oarecare::Afisare()
+{
+	PrintTree(os, root);
+}
