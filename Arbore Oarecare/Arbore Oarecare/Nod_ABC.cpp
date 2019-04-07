@@ -11,6 +11,10 @@ Nod_ABC::Nod_ABC(const Nod_ABC& nod) : Nod(nod.value)
 	stanga = nod.stanga;
 	dreapta = nod.dreapta;
 }
+Nod_ABC Nod_ABC::operator=(const Nod_ABC &nod)
+{
+	return Nod_ABC(nod.value, nod.stanga, nod.dreapta);
+}
 istream& operator>> (istream& is, Nod_ABC& nod)
 {
 	is >> nod.value; //>> nod.stanga >> nod.dreapta;

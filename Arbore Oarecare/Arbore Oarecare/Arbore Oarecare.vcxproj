@@ -164,6 +164,7 @@
     <ClInclude Include="Nod.h" />
     <ClInclude Include="Nod_ABC.h" />
     <ClInclude Include="Nod_fiu_frate.h" />
+    <ClInclude Include="Source.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

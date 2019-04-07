@@ -15,6 +15,7 @@ private:
 	Nod_ABC* DeleteUtility(int value, Nod_ABC* head);
 public:
 	ArboreDeCautare(int value=0);
+	ArboreDeCautare(const ArboreDeCautare& arbore);
 	void Insert(int value);
 	Nod_ABC* Search(int value);
 	int FindMax(Nod_ABC* root);

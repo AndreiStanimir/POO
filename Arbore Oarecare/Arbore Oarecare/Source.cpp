@@ -7,6 +7,7 @@
 
 #include "AB_oarecare.h"
 #include "ABC.h"
+#include "Source.h"
 
 using namespace std;
 
@@ -20,6 +21,14 @@ Se presupune ca fiecare t se afla deja in arbore
 */
 
 int main()
+{
+	DemoArboreOarecare();
+	//os << arbore2 << "----------------------\n";
+	//os << arbore + arbore2;
+	return 0;
+}
+
+void DemoArboreOarecare()
 {
 	ifstream fin("../arbore.in");
 	ostream os(cout.rdbuf());
@@ -37,7 +46,6 @@ int main()
 	AB_oarecare arbore2(os);
 	fin = ifstream("../arbore.in");
 	fin >> arbore2;
-	//os << arbore2 << "----------------------\n";
-	//os << arbore + arbore2;
-	return 0;
+
+	arbore = arbore2;
 }
