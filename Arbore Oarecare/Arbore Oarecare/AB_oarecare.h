@@ -17,12 +17,13 @@ public:
 	friend ostream& operator << (ostream& os, AB_oarecare& arbore);
 	AB_oarecare& operator +(AB_oarecare& arbore);
 	AB_oarecare& operator =(AB_oarecare& arbore);
+	
+	AB_oarecare(ostream& out);
+	~AB_oarecare();
+
 	void CopyTree(Nod_fiu_frate * arbore1, Nod_fiu_frate * arbore2);
-	void CopyTree(AB_oarecare * root1, AB_oarecare * root2);
 	void InsertNode(int tata, int fiu);
-
 	void PrintTree(ostream& os, Nod_fiu_frate* arbore);
-
 	void PrintChildren(Nod_fiu_frate& arbore);
 	Nod_fiu_frate* SearchNode(int value, Nod_fiu_frate* arbore);
 	void AddChild(Nod_fiu_frate& tata, int value);
@@ -30,10 +31,9 @@ public:
 	void DFS(int value);
 	int GetHight();
 	void PrintLeafs();
-	AB_oarecare(ostream& out);
 	void SetOstream(ostream& out);
 	void Afisare();
 	void DeleteTree(Nod_fiu_frate * root);
-	void DeleteTree();
-	~AB_oarecare();
+	
+	
 };

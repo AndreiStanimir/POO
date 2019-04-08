@@ -16,6 +16,7 @@ private:
 public:
 	ArboreDeCautare(int value=0);
 	ArboreDeCautare(const ArboreDeCautare& arbore);
+	void CopyTree(Nod_ABC * root1, Nod_ABC * root2);
 	void Insert(int value);
 	Nod_ABC* Search(int value);
 	int FindMax(Nod_ABC* root);

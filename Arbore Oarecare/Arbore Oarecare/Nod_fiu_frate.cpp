@@ -15,7 +15,7 @@ Nod_fiu_frate::Nod_fiu_frate(const Nod_fiu_frate & nod) : Nod(nod.value)
 	nextFrate = nod.nextFrate;
 }
 
-Nod_fiu_frate& Nod_fiu_frate::operator =(const Nod_fiu_frate& nod) : Nod(nod.value)
+Nod_fiu_frate& Nod_fiu_frate::operator =(const Nod_fiu_frate& nod)
 {
 	value = nod.value;
 	nrCopii = nod.nrCopii;

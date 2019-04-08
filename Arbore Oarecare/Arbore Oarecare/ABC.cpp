@@ -6,6 +6,20 @@ ArboreDeCautare::ArboreDeCautare(int value)
 	root = new Nod_ABC(value);
 }
 
+ArboreDeCautare::ArboreDeCautare(const ArboreDeCautare & arbore)
+{
+	CopyTree(root, arbore.root);
+}
+void ArboreDeCautare::CopyTree(Nod_ABC* root1, Nod_ABC* root2)
+{
+	if (!root2)
+	{
+		*root1 = Nod_ABC(*root2);
+	}
+	root1 = new Nod_ABC(*root2);
+	CopyTree(root1->stanga, root2->stanga);
+	CopyTree(root1->dreapta, root2->dreapta);
+}
 void ArboreDeCautare::Insert(int value)
 {
 	InsertUtility(value, root);
