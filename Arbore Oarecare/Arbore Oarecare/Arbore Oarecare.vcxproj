@@ -166,6 +166,9 @@
     <ClInclude Include="Nod_fiu_frate.h" />
     <ClInclude Include="Source.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="ABC.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

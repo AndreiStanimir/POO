@@ -181,28 +181,25 @@ ArboreDeCautare::~ArboreDeCautare()
 
 istream& operator >> (istream& is, ArboreDeCautare &arbore)
 {
-	int n, tata, fiu;
+	int n, value;
 	is >> n;
-	is >> tata;
-	arbore.root = new Nod_ABC(tata);
-	for (int i = 0; i < n - 1; i++)
+	is >> value;
+	arbore.root = new Nod_ABC(value);
+	for (int i = 0; i < n ; i++)
 	{
-		is >> tata >> fiu;
-		arbore.InsertNode(tata, fiu);
+		is >> value;
+		arbore.Insert(value);
 	}
 
 	return is;
 }
 ostream& operator << (ostream& os, ArboreDeCautare& arbore)
 {
-
-	Nod_ABC* root = &arbore.root;
-	arbore.PrintTree(os, root);
-
+	arbore.Afisare();
 	return os;
 }
 ArboreDeCautare & ArboreDeCautare::operator=(ArboreDeCautare& arbore)
 {
-	CopyTree(&this->root, &arbore.root);
+	CopyTree(this->root, arbore.root);
 	return *this;
 }

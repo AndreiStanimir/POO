@@ -37,6 +37,8 @@ ostream& operator<< (ostream& os, Nod_fiu_frate& nod)
 
 Nod_fiu_frate::~Nod_fiu_frate()
 {
+	nrCopii = 0;
 	nextFrate = children = NULL;
+	
 }
 

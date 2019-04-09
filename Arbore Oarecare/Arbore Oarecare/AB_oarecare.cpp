@@ -35,7 +35,7 @@ AB_oarecare& AB_oarecare::operator +(AB_oarecare& arbore)
 
 AB_oarecare & AB_oarecare::operator=(AB_oarecare & arbore)
 {
-	CopyTree(&this->root , &arbore.root);
+	CopyTree(&this->root, &arbore.root);
 	return *this;
 }
 
@@ -65,7 +65,7 @@ void AB_oarecare::InsertNode(int tata, int fiu)
 {
 	Nod_fiu_frate* nodTata = SearchNode(tata, &root);
 	AddChild(*nodTata, fiu);
-	nr_noduri++;
+	CresteNrNoduri();
 }
 
 void AB_oarecare::PrintTree(ostream& os, Nod_fiu_frate* arbore)
@@ -256,15 +256,22 @@ void AB_oarecare::DeleteTree(Nod_fiu_frate* root)
 {
 	if (!root)
 		return;
-	Nod_fiu_frate* head = root->children;
-	while (head)
+	if (root->children != nullptr)
 	{
-		DeleteTree(head);
-		head = head->nextFrate;
+		Nod_fiu_frate* head = root->children;
+		while (head)
+		{
+			Nod_fiu_frate* next = head->nextFrate;
+			DeleteTree(head);
+			head = next;
+
+		}
+
 
 	}
 
-	delete root;
+	if (root)
+		delete root;
 }
 AB_oarecare::~AB_oarecare()
 {

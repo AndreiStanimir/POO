@@ -1,4 +1,4 @@
-sd#include <iostream>
+#include <iostream>
 #ifndef ARBORE_H
 #include "Arbore.h"
 #endif // !ARBORE_H
@@ -6,7 +6,7 @@ sd#include <iostream>
 #include "Nod_fiu_frate.h"
 #include <queue>
 #include <stack>
-class AB_oarecare : Arbore
+class AB_oarecare : public Arbore
 {
 private:
 	Nod_fiu_frate root;

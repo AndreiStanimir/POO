@@ -23,6 +23,7 @@ Se presupune ca fiecare t se afla deja in arbore
 int main()
 {
 	DemoArboreOarecare();
+	DemoArboreBinarDeCautare();
 	//os << arbore2 << "----------------------\n";
 	//os << arbore + arbore2;
 	return 0;
@@ -48,4 +49,16 @@ void DemoArboreOarecare()
 	fin >> arbore2;
 
 	arbore = arbore2;
+}
+void DemoArboreBinarDeCautare()
+{
+	ifstream fin("../ABC.txt");
+	ostream os(cout.rdbuf());
+	//ofstream os("arbore.out");
+	//os.rdbuf();
+	ArboreDeCautare abc;
+	fin >> abc;
+	os << abc;
+	//arbore.SetOstream(os);
+
 }

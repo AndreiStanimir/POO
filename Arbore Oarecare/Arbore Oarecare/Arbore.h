@@ -8,5 +8,6 @@ protected:
 public:
 	Arbore(int nrNoduri=0);
 	virtual void Afisare();
+	void CresteNrNoduri();
 };
 #endif // !ARBORE_H
