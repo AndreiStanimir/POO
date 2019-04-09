@@ -37,6 +37,6 @@ ostream& operator<< (ostream& os, Nod_fiu_frate& nod)
 
 Nod_fiu_frate::~Nod_fiu_frate()
 {
-
+	nextFrate = children = NULL;
 }
 

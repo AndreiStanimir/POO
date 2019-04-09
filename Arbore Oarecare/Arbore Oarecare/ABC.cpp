@@ -178,3 +178,31 @@ ArboreDeCautare::~ArboreDeCautare()
 {
 	DestroyTree(root);
 }
+
+istream& operator >> (istream& is, ArboreDeCautare &arbore)
+{
+	int n, tata, fiu;
+	is >> n;
+	is >> tata;
+	arbore.root = new Nod_ABC(tata);
+	for (int i = 0; i < n - 1; i++)
+	{
+		is >> tata >> fiu;
+		arbore.InsertNode(tata, fiu);
+	}
+
+	return is;
+}
+ostream& operator << (ostream& os, ArboreDeCautare& arbore)
+{
+
+	Nod_ABC* root = &arbore.root;
+	arbore.PrintTree(os, root);
+
+	return os;
+}
+ArboreDeCautare & ArboreDeCautare::operator=(ArboreDeCautare& arbore)
+{
+	CopyTree(&this->root, &arbore.root);
+	return *this;
+}

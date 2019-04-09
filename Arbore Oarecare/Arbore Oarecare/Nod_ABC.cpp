@@ -28,5 +28,5 @@ ostream& operator<< (ostream& os, Nod_ABC& nod)
 
 Nod_ABC::~Nod_ABC()
 {
-
+	stanga = dreapta = NULL;
 }
