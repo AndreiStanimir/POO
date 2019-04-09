@@ -142,9 +142,9 @@ void ArboreDeCautare::Afisare()
 {
 	cout << "RSD:\n";
 	RSD(root);
-	cout << "SRD:\n";
+	cout << "\nSRD:\n";
 	SRD(root);
-	cout << "SDR:\n";
+	cout << "\nSDR:\n";
 	SDR(root);
 }
 
