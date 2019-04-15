@@ -6,7 +6,7 @@ class Nod
 protected:
 	int value;
 public:
-	Nod(int value)
+	Nod(int value=0)
 	{
 		this->value = value;
 	}

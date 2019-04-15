@@ -23,7 +23,8 @@ Se presupune ca fiecare t se afla deja in arbore
 int main()
 {
 	//DemoArboreOarecare();
-	DemoArboreBinarDeCautare();
+	//DemoArboreBinarDeCautare();
+	DemoFunctieVirtuala();
 	//os << arbore2 << "----------------------\n";
 	//os << arbore + arbore2;
 	return 0;
@@ -34,7 +35,6 @@ void DemoArboreOarecare()
 	ifstream fin("../arbore.in");
 	ostream os(cout.rdbuf());
 	//ofstream os("arbore.out");
-	//os.rdbuf();
 	AB_oarecare arbore(os);
 	//arbore.AddChild(10, 1);
 	arbore.SetOstream(os);
@@ -44,11 +44,12 @@ void DemoArboreOarecare()
 	arbore.BFS(10);
 	arbore.DFS(1);
 	arbore.PrintLeafs();
-	AB_oarecare arbore2(os);
-	fin = ifstream("../arbore.in");
-	fin >> arbore2;
-
-	arbore = arbore2;
+	AB_oarecare arbore2; 
+	arbore2=arbore;
+	//fin = ifstream("../arbore.in");
+	//fin >> arbore2;
+	cout << arbore2 << endl;
+	//arbore = arbore2;
 }
 void DemoArboreBinarDeCautare()
 {
@@ -62,3 +63,24 @@ void DemoArboreBinarDeCautare()
 	//arbore.SetOstream(os);
 
  }
+void DemoFunctieVirtuala()
+{
+	ifstream fin("../arbore.in");
+	ostream os(cout.rdbuf());
+	AB_oarecare arbore_oarecare(os);
+	//arbore.AddChild(10, 1);
+	arbore_oarecare.SetOstream(os);
+	fin >> arbore_oarecare;
+	os << arbore_oarecare;
+	
+	ifstream fin2("ABC.txt");
+	ArboreDeCautare abc;
+	fin2 >> abc;
+	os << abc;
+
+	Arbore* arbore = &arbore_oarecare;
+	arbore->Afisare();
+
+	arbore = &abc;
+	arbore->Afisare();
+}

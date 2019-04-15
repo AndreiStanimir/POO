@@ -1,5 +1,2 @@
-﻿  ABC.cpp
-c:\users\andrei\source\repos\poo\arbori oarecare 2\arbore oarecare\arbore oarecare\abc.cpp(22): warning C4717: 'ArboreDeCautare::CopyTree': recursive on all control paths, function will cause runtime stack overflow
-c:\users\andrei\source\repos\poo\arbori oarecare 2\arbore oarecare\arbore oarecare\abc.cpp(63): warning C4715: 'ArboreDeCautare::SearchUtility': not all control paths return a value
-c:\users\andrei\source\repos\poo\arbori oarecare 2\arbore oarecare\arbore oarecare\abc.cpp(79): warning C4715: 'ArboreDeCautare::SearchParent': not all control paths return a value
+﻿  AB_oarecare.cpp
   Arbore Oarecare.vcxproj -> C:\Users\Andrei\Source\Repos\POO\Arbori Oarecare 2\Arbore Oarecare\Debug\Arbore Oarecare.exe

@@ -39,6 +39,6 @@ Nod_fiu_frate::~Nod_fiu_frate()
 {
 	nrCopii = 0;
 	nextFrate = children = NULL;
-	
+	Nod::~Nod();
 }
 

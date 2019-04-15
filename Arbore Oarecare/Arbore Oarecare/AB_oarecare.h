@@ -6,10 +6,11 @@
 #include "Nod_fiu_frate.h"
 #include <queue>
 #include <stack>
+#include <set>
 class AB_oarecare : public Arbore
 {
 private:
-	Nod_fiu_frate root;
+	Nod_fiu_frate* root;
 	ostream& os;
 public:
 
@@ -17,11 +18,15 @@ public:
 	friend ostream& operator << (ostream& os, AB_oarecare& arbore);
 	AB_oarecare& operator +(AB_oarecare& arbore);
 	AB_oarecare& operator =(AB_oarecare& arbore);
+
+	Nod_fiu_frate* CopyTree(Nod_fiu_frate * arbore1, Nod_fiu_frate * arbore2);
+
+	//void CopyTree(Nod_fiu_frate & arbore1, Nod_fiu_frate *& arbore2);
 	
-	AB_oarecare(ostream& out);
+	AB_oarecare(ostream& out=cout);
 	~AB_oarecare();
 
-	void CopyTree(Nod_fiu_frate * arbore1, Nod_fiu_frate * arbore2);
+	//void CopyTree(Nod_fiu_frate * arbore1, Nod_fiu_frate * arbore2);
 	void InsertNode(int tata, int fiu);
 	void PrintTree(ostream& os, Nod_fiu_frate* arbore);
 	void PrintChildren(Nod_fiu_frate& arbore);
@@ -34,6 +39,4 @@ public:
 	void SetOstream(ostream& out);
 	void Afisare();
 	void DeleteTree(Nod_fiu_frate * root);
-	
-	
 };
