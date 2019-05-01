@@ -14,7 +14,12 @@ private:
 	Nod_ABC* SearchParent(int value, Nod_ABC* head);
 	Nod_ABC* DeleteUtility(int value, Nod_ABC* head);
 public:
+	friend istream& operator >> (istream& is, ArboreDeCautare &arbore);
+	friend ostream& operator << (ostream& os, ArboreDeCautare &arbore);
+	ArboreDeCautare & ArboreDeCautare::operator=(ArboreDeCautare& arbore);
 	ArboreDeCautare(int value=0);
+	ArboreDeCautare(const ArboreDeCautare& arbore);
+	void CopyTree(Nod_ABC * root1, Nod_ABC * root2);
 	void Insert(int value);
 	Nod_ABC* Search(int value);
 	int FindMax(Nod_ABC* root);

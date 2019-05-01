@@ -13,28 +13,31 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{84e37c49-8e67-472f-8fa4-a1d01ad390cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ABC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Nod.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Nod_ABC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Nod_fiu_frate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AB_oarecare.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="ABC.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="Arbore.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Nod.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Nod_ABC.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Nod_fiu_frate.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +64,11 @@
     <ClInclude Include="Arbore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ABC.txt" />
   </ItemGroup>
 </Project>

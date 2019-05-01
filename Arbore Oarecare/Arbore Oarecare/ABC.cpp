@@ -6,6 +6,20 @@ ArboreDeCautare::ArboreDeCautare(int value)
 	root = new Nod_ABC(value);
 }
 
+ArboreDeCautare::ArboreDeCautare(const ArboreDeCautare & arbore)
+{
+	CopyTree(root, arbore.root);
+}
+void ArboreDeCautare::CopyTree(Nod_ABC* root1, Nod_ABC* root2)
+{
+	if (!root2)
+	{
+		*root1 = Nod_ABC(*root2);
+	}
+	root1 = new Nod_ABC(*root2);
+	CopyTree(root1->stanga, root2->stanga);
+	CopyTree(root1->dreapta, root2->dreapta);
+}
 void ArboreDeCautare::Insert(int value)
 {
 	InsertUtility(value, root);
@@ -128,9 +142,9 @@ void ArboreDeCautare::Afisare()
 {
 	cout << "RSD:\n";
 	RSD(root);
-	cout << "SRD:\n";
+	cout << "\nSRD:\n";
 	SRD(root);
-	cout << "SDR:\n";
+	cout << "\nSDR:\n";
 	SDR(root);
 }
 
@@ -163,4 +177,29 @@ void ArboreDeCautare::SDR(Nod_ABC* root)
 ArboreDeCautare::~ArboreDeCautare()
 {
 	DestroyTree(root);
+}
+
+istream& operator >> (istream& is, ArboreDeCautare &arbore)
+{
+	int n, value;
+	is >> n;
+	is >> value;
+	arbore.root = new Nod_ABC(value);
+	for (int i = 0; i < n ; i++)
+	{
+		is >> value;
+		arbore.Insert(value);
+	}
+
+	return is;
+}
+ostream& operator << (ostream& os, ArboreDeCautare& arbore)
+{
+	arbore.Afisare();
+	return os;
+}
+ArboreDeCautare & ArboreDeCautare::operator=(ArboreDeCautare& arbore)
+{
+	CopyTree(this->root, arbore.root);
+	return *this;
 }

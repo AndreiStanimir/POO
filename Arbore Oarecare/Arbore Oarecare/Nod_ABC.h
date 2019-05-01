@@ -9,6 +9,7 @@ private:
 public:
 	Nod_ABC(int val = 0, Nod_ABC* st = nullptr, Nod_ABC* dr = nullptr);
 	Nod_ABC(const Nod_ABC& nod);
+	Nod_ABC operator =(const Nod_ABC& nod);
 	friend istream& operator>> (istream& is, Nod_ABC& nod);
 	friend ostream& operator<< (ostream& os, Nod_ABC& nod);
 	~Nod_ABC();

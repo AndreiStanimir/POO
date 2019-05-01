@@ -1,15 +1,16 @@
 #include "AB_oarecare.h"
 
- istream& operator >> (istream& is, AB_oarecare &arbore)
+istream& operator >> (istream& is, AB_oarecare &arbore)
 {
 	int n, tata, fiu;
 	is >> n;
 	is >> tata;
-	arbore.root = Nod_fiu_frate(tata);
+	arbore.root = new Nod_fiu_frate(tata);
 	for (int i = 0; i < n - 1; i++)
 	{
 		is >> tata >> fiu;
 		arbore.InsertNode(tata, fiu);
+
 	}
 
 	return is;
@@ -17,26 +18,57 @@
 ostream& operator << (ostream& os, AB_oarecare& arbore)
 {
 
-	Nod_fiu_frate* root = &arbore.root;
+	Nod_fiu_frate* root = arbore.root;
 	arbore.PrintTree(os, root);
 
 	return os;
 }
 AB_oarecare& AB_oarecare::operator +(AB_oarecare& arbore)
 {
-	Nod_fiu_frate* children = this->root.children;
+	Nod_fiu_frate* children = this->root->children;
 	while (children->nextFrate)
 	{
 		children = children->nextFrate;
 	}
-	children->nextFrate = &arbore.root;
+	children->nextFrate = arbore.root;
 	return *this;
+}
+
+AB_oarecare & AB_oarecare::operator=(AB_oarecare & arbore)
+{
+	cout << "\nCopiere arbore\n";
+	this->root=CopyTree(this->root, arbore.root);
+	return *this;
+}
+
+Nod_fiu_frate* AB_oarecare::CopyTree(Nod_fiu_frate* arbore1, Nod_fiu_frate* arbore2)
+{
+	arbore1 = new Nod_fiu_frate(*arbore2);
+	Nod_fiu_frate* head2 = arbore2->children;
+	if (head2 == NULL) {
+		arbore1->children = NULL;
+		return arbore1;
+	}
+	else {
+		arbore1->children = new Nod_fiu_frate(head2->value);
+	}
+	Nod_fiu_frate* head1 = arbore1->children;
+	head2 = head2->nextFrate;
+	while (head2)
+	{
+		head1->nextFrate = new Nod_fiu_frate(head2->value);
+		CopyTree(head1, head2);
+		head1 = head1->nextFrate;
+		head2 = head2->nextFrate;
+	}
+	return arbore1;
 }
 
 void AB_oarecare::InsertNode(int tata, int fiu)
 {
-	Nod_fiu_frate* nodTata = SearchNode(tata, &root);
+	Nod_fiu_frate* nodTata = SearchNode(tata, root);
 	AddChild(*nodTata, fiu);
+	CresteNrNoduri();
 }
 
 void AB_oarecare::PrintTree(ostream& os, Nod_fiu_frate* arbore)
@@ -108,7 +140,7 @@ void AB_oarecare::AddChild(Nod_fiu_frate& tata, int value)
 void AB_oarecare::BFS(int value)
 {
 	cout << "BFS: ";
-	Nod_fiu_frate* foundNode = SearchNode(value, &root);
+	Nod_fiu_frate* foundNode = SearchNode(value, root);
 	if (foundNode == nullptr)
 	{
 		os << "Nodul " << value << " nu exista\n";
@@ -135,7 +167,7 @@ void AB_oarecare::BFS(int value)
 void AB_oarecare::DFS(int value)
 {
 	cout << "DFS: ";
-	Nod_fiu_frate* foundNode = SearchNode(value, &root);
+	Nod_fiu_frate* foundNode = SearchNode(value, root);
 	if (foundNode == nullptr)
 	{
 		os << "Nodul " << value << " nu exista\n";
@@ -164,7 +196,7 @@ void AB_oarecare::DFS(int value)
 int AB_oarecare::GetHight()
 {
 	queue< pair<Nod_fiu_frate*, int> > coada;
-	coada.push(make_pair(&root, 0));
+	coada.push(make_pair(root, 0));
 	int maxHeight = -1;
 	while (!coada.empty())
 	{
@@ -189,7 +221,7 @@ void AB_oarecare::PrintLeafs()
 {
 	os << "Frunzele sunt: ";
 	queue<Nod_fiu_frate*> coada;
-	coada.push(&root);
+	coada.push(root);
 	while (!coada.empty())
 	{
 		Nod_fiu_frate* nodCurent = coada.front();
@@ -211,7 +243,7 @@ void AB_oarecare::PrintLeafs()
 AB_oarecare::AB_oarecare(ostream& out) : os(out)
 {
 	os.rdbuf(out.rdbuf());
-	root = *new Nod_fiu_frate(-1);
+	root = new Nod_fiu_frate(-1);
 }
 void AB_oarecare::SetOstream(ostream& out)
 {
@@ -221,4 +253,38 @@ void AB_oarecare::SetOstream(ostream& out)
 void AB_oarecare::Afisare()
 {
 	PrintTree(os, root);
+}
+
+
+// Broken;
+void AB_oarecare::DeleteTree(Nod_fiu_frate* root)
+{
+	if (!root)
+		return;
+	if (root->children != nullptr)
+	{
+		Nod_fiu_frate* head = root->children;
+		while (head)
+		{
+			Nod_fiu_frate* next = head->nextFrate;
+			DeleteTree(head);
+			head = next;
+
+		}
+
+
+	}
+	try {
+		if (root)
+			delete root;
+	}
+	catch(exception e)
+	{
+		//:(
+	}
+}
+AB_oarecare::~AB_oarecare()
+{
+	// Broken
+	//DeleteTree(&root);
 }

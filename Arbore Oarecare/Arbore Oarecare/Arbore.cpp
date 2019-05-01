@@ -7,3 +7,7 @@
 void Arbore::Afisare()
 {
 }
+void Arbore::CresteNrNoduri()
+{
+	nr_noduri++;
+}
