@@ -10,10 +10,10 @@ class Movie
 	double earnings;
 	vector<Person*> persoane;
 public:
-	Movie(string nume,
-		int tip,
-		int durata,
-		int earnings);
+	Movie(string nume="",
+		int tip=0,
+		int durata=0,
+		int earnings=0);
 	~Movie();
 	void AddPersoana(long long cnp, string nume, float cutPercentage)
 	{
@@ -44,6 +44,17 @@ public:
 	vector <Person*>& GetPersoane()
 	{
 		return persoane;
+	}
+	Movie& operator=(Movie& m)
+	{
+		m.durata = durata;
+		m.earnings = earnings;
+		m.nume = nume;
+		m.tip = tip;
+
+		m.persoane = vector<Person*>(persoane);
+
+		return *this;
 	}
 	friend istream& operator>>(istream& is, Movie& m)
 	{

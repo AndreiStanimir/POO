@@ -19,7 +19,7 @@ int main()
 		cout << c;
 		return -1;
 	}
-	Movie m("Avengers",1,180,100000);
+	Movie m;
 	
 	fin >> m;
 	m.AfiseazaPersoane();
@@ -27,7 +27,10 @@ int main()
 	for (auto p : persoane)
 	{
 		p->Afiseaza();
-		cout << m.GetEarnings(p) << endl << endl;
+		cout << "Castiga: "<< m.GetEarnings(p) << endl << endl;
 	}
+
+	Movie m2 = m;
+	m2.AfiseazaPersoane();
 	
 }

@@ -4,10 +4,10 @@
 
 void Person::AfisarePersoana()
 {
-	cout << cnp << endl <<
-		nume << endl <<
-		nume_film << endl <<
-		cutPercentage << endl;
+	cout << "Cnp: "<< cnp << endl <<
+		"nume: "<< nume << endl <<
+		"nume film: " << nume_film << endl <<
+		"Cut percentage: " << cutPercentage << endl;
 }
 
 void Person::CitirePersoana(istream& is)
