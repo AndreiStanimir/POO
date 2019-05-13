@@ -5,12 +5,12 @@
 #include <fstream>
 using namespace std;
 
+
 int main()
-{
-	ifstream fin("C:\\Users\\andreio\\Tema 3\\Tema 3\\avengers.txt");
+	{	
+	ifstream fin("avengers.txt");
 	try {
 	fin.exceptions(istream::failbit | istream::badbit);
-
 		if (!fin.is_open())
 			throw "File not found";
 	}
@@ -19,10 +19,14 @@ int main()
 		cout << c;
 		return -1;
 	}
+	catch (exception e)
+	{
+		cout << e.what();
+	}
 	Movie m;
 	
 	fin >> m;
-	m.AfiseazaPersoane();
+	//m.AfiseazaPersoane();
 	auto persoane = m.GetPersoane();
 	for (auto p : persoane)
 	{
@@ -31,6 +35,10 @@ int main()
 	}
 
 	Movie m2 = m;
-	m2.AfiseazaPersoane();
+	//m2.AfiseazaPersoane();
+	
+	FirmaDistributie<int> firma;
+	firma.AddMovie(m);
+	firma.AfiseazaFilme();
 	
 }

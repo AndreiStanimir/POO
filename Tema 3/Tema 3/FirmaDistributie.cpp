@@ -2,11 +2,3 @@
 #include "FirmaDistributie.h"
 
 
-FirmaDistributie::FirmaDistributie()
-{
-}
-
-
-FirmaDistributie::~FirmaDistributie()
-{
-}

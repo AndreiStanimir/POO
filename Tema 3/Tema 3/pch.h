@@ -19,6 +19,7 @@
 #include "Technical.h"
 #include "Director.h"
 #include "Movie.h"
+#include "FirmaDistributie.h"
 using namespace std;
 
 #endif //PCH_H
